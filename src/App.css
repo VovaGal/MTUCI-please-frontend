@@ -1,0 +1,230 @@
+.game{
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    z-index: 10;
+}
+
+.header {
+    background-image: 
+    url(
+        ./assets/mtuciart.png);
+    background-size: contain;
+    height: 288px;
+    width: 1280px;
+    background-repeat:no-repeat;
+  }
+
+.gameArea {
+    display: flex;
+}
+
+.window {
+    background-image:   
+    url(
+        ./assets/personbg.png);
+    background-size: contain;
+    height: 432px;
+    width: 512px;
+
+    background-repeat:no-repeat; 
+  }
+
+.person {
+background-image:   
+url(
+        ./assets/bellyW.png);
+    background-size: fill;
+    height: 432px;
+    width: 512px;
+    margin: 0 0;
+    background-repeat:no-repeat; 
+}
+
+.table {
+    display: flex;
+    background-image: 
+    url(
+        ./assets/table.png);
+    background-size: contain;
+    height: 432px;
+    width: 768px;
+    background-repeat:no-repeat; 
+}
+
+.buttons {
+    display: flex;
+    gap: 40px;
+    width: 50%;
+    margin: 46% -70%;
+}
+.btnY {
+    background: hsl(200, 100%, 50%, 0.1);
+    border: 1px solid hsl(118, 54%, 36%);
+    color: hsl(130, 55%, 30%);
+    padding: 0.25em 0.5em;
+    border-radius: 0.25em;
+    cursor: pointer;
+    outline: none;
+    width: 200px;
+    height: 60px;
+    font-size: 2rem;
+    font-weight: bold;
+}
+.btnN {
+    background: hsl(200, 100%, 50%, 0.1);
+    border: 1px solid hsl(0, 78%, 47%);
+    color: hsl(0, 100%, 50%);
+    padding: 0.25em 0.5em;
+    border-radius: 0.25em;
+    cursor: pointer;
+    outline: none;
+    width: 200px;
+    height: 60px;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+
+
+.docs {
+    display: flex;
+    width: 768;
+    height: 320;
+}
+
+.pass {
+    background-image:   
+    url(
+        ./assets/pass.png);
+    background-size: contain;
+    margin-top: 20px;
+    margin-left: 140px;
+    height: 128px;
+    width: 205px;
+    background-repeat:no-repeat; 
+}
+.passCheck {
+
+}
+
+.uniID {
+    background-image:   
+    url(
+        ./assets/uniID.png);
+    background-size: contain;
+    margin-top: 180px;
+    margin-left: -320px;
+    height: 128px;
+    width: 410px;
+    background-repeat:no-repeat; 
+}
+.idCheck {
+
+}
+.passport {
+    background-image:
+    url(
+        ./assets/passport.png);
+    background-size: contain;
+    margin-top: 15px;
+    margin-left: 35px;
+    height: 300px;
+    width: 240px;
+    background-repeat:no-repeat; 
+}
+.ppCheck {
+
+}
+
+/* checkboxes shenanigans */
+
+input[type="checkbox"] {
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: #fff;
+    margin: 0;
+}
+
+
+input[name=pass] {
+    appearance: none;
+    background-color: #ffffff00;
+    margin: 0;
+    font: inherit;
+    height: 130px;
+    width: 205px;
+    /* color: #000000;
+    border: 0.15em solid currentColor;
+    border-radius: 0.15em; */
+    transform: translateY(-0.075em);
+    display: grid;
+    place-content: center;
+}
+input[name=pass]::before {
+    content: "";
+    height: 130px;
+    width: 205px;
+    transform: scale(0);
+    transition: 120ms transform ease-in-out;
+    background-color: #f7080846;
+}
+input[name=pass]:checked::before {
+    transform: scale(1);
+}
+
+
+
+input[name=uniID] {
+    appearance: none;
+    background-color: #ffffff00;
+    margin: 0;
+    font: inherit;
+    height: 130px;
+    width: 410px;
+    /* color: #000000;
+    border: 0.15em solid currentColor;
+    border-radius: 0.15em; */
+    transform: translateY(-0.075em);
+    display: grid;
+    place-content: center;
+}
+input[name=uniID]::before {
+    content: "";
+    height: 130px;
+    width: 410px;
+    transform: scale(0);
+    transition: 120ms transform ease-in-out;
+    background-color: #f7080846;
+}
+input[name=uniID]:checked::before {
+    transform: scale(1);
+}
+
+input[name=passport] {
+    appearance: none;
+    background-color: #ffffff00;
+    margin: 0;
+    font: inherit;
+    height: 300px;
+    width: 240px;
+    /* color: #000000;
+    border: 0.15em solid currentColor;
+    border-radius: 0.15em; */
+    transform: translateY(-0.075em);
+    display: grid;
+    place-content: center;
+}
+input[name=passport]::before {
+    content: "";
+    height: 300px;
+    width: 240px;
+    transform: scale(0);
+    transition: 120ms transform ease-in-out;
+    background-color: #f7080846;
+}
+input[name=passport]:checked::before {
+    transform: scale(1);
+}
