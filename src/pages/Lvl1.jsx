@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
-import './lvl1.css';
 import React, { Component } from 'react';
+import './lvl1.css';
+import {approvedCall, deniedCall} from "../funcs/Refresh.jsx";
 
 export default function Lvl1() {
 
@@ -18,18 +19,8 @@ export default function Lvl1() {
     const handleOnChangePassport = () => {
       setIsCheckedPassport(!isCheckedPassport); 
     }; /// passport
-  
-    function approvedCall() {
-      window.location.reload(false);
-  
-    }; /// approve page refresh
-  
-    function deniedCall() {
-      window.location.reload(false);
-    }; /// approve page refresh
-  
-  
-  
+
+
     const [points, setPoints] = useState(0);
     const handleCounter = () => {
       setPoints(points + 1)
@@ -71,8 +62,7 @@ export default function Lvl1() {
               checkbox is {isCheckedPass ? "checked" : "un-checked"}.
             </div>          
             </div>
-  
-  
+            
             <div className='uniID'>
             <label className='uniIDCheck'> 
               <input type='checkbox' 

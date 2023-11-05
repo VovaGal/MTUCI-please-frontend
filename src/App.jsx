@@ -30,5 +30,4 @@ function NavWrapper() {
   )
 }
 
-
 export default App
