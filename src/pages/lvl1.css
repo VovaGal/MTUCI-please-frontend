@@ -10,7 +10,7 @@
 .header {
     background-image: 
     url(
-        ./assets/mtuciart.png);
+        ../assets/mtuciart.png);
     background-size: contain;
     height: 288px;
     width: 1280px;
@@ -24,7 +24,7 @@
 .window {
     background-image:   
     url(
-        ./assets/personbg.png);
+        ../assets/personbg.png);
     background-size: contain;
     height: 432px;
     width: 512px;
@@ -35,7 +35,7 @@
 .person {
 background-image:   
 url(
-        ./assets/bellyW.png);
+        ../assets/bellyW.png);
     background-size: fill;
     height: 432px;
     width: 512px;
@@ -47,7 +47,7 @@ url(
     display: flex;
     background-image: 
     url(
-        ./assets/table.png);
+        ../assets/table.png);
     background-size: contain;
     height: 432px;
     width: 768px;
@@ -98,7 +98,7 @@ url(
 .pass {
     background-image:   
     url(
-        ./assets/pass.png);
+        ../assets/pass.png);
     background-size: contain;
     margin-top: 20px;
     margin-left: 140px;
@@ -113,7 +113,7 @@ url(
 .uniID {
     background-image:   
     url(
-        ./assets/uniID.png);
+        ../assets/uniID.png);
     background-size: contain;
     margin-top: 180px;
     margin-left: -320px;
@@ -127,7 +127,7 @@ url(
 .passport {
     background-image:
     url(
-        ./assets/passport.png);
+        ../assets/passport.png);
     background-size: contain;
     margin-top: 15px;
     margin-left: 35px;
