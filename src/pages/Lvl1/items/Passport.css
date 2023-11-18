@@ -1,0 +1,133 @@
+.passport {
+    background-image:
+    url(
+        ../../../assets/passport.svg);
+    background-size: contain;
+    margin-top: 15px;
+    margin-left: 35px;
+    height: 300px;
+    width: 240px;
+    background-repeat:no-repeat; 
+}
+
+
+/* Date */
+.ppDate {
+    margin-top: 55px;
+    margin-left: 25px;
+
+}
+input[name=ppDate] {
+    appearance: none;
+    background-color: #ffffff00;
+    margin: 0;
+    font: inherit;
+    margin-top: -18px;
+    margin-left: -6px;
+    height: 20px;
+    width: 109px;
+    /* color: #000000;
+    border: 0.15em solid currentColor;
+    border-radius: 0.15em; */
+    transform: translateY(-0.075em);
+    display: grid;
+    place-content: center;
+}
+input[name=ppDate]::before {
+    content: "";
+    height: 20px;
+    width: 109px;
+    transform: scale(0);
+    transition: 120ms transform ease-in-out;
+    background-color: #f7080846;
+}
+input[name=ppDate]:checked::before {
+    transform: scale(1);
+}
+
+.secPage {
+    display: flex;
+}
+
+
+/*Pic */
+.ppPic {
+    background-image:   
+    url(
+        ../../../assets/bellyW.svg);
+    background-size: cover;
+    /* margin-left: 22px; */
+    margin-top: 80px;
+    margin-left: 17px;
+    height: 73px;
+    width: 58px;
+    background-repeat:no-repeat; 
+}
+input[name=ppPic] {
+    appearance: none;
+    background-color: #ffffff00;
+    margin: 0;
+    font: inherit;
+    height: 73px;
+    width: 58px;
+    /* color: #000000;
+    border: 0.15em solid currentColor;
+    border-radius: 0.15em; */
+    transform: translateY(-0.075em);
+    display: grid;
+    place-content: center;
+}
+input[name=ppPic]::before {
+    content: "";
+    height: 73px;
+    width: 58px;
+    transform: scale(0);
+    transition: 120ms transform ease-in-out;
+    background-color: #f7080846;
+}
+input[name=ppPic]:checked::before {
+    transform: scale(1);
+}
+
+
+
+/* Info */
+.ppInfo {
+    margin-top: 83px;
+    margin-left: 31px;
+}
+
+input[name=ppInfo] {
+    appearance: none;
+    background-color: #ffffff00;
+    margin: 0;
+    font: inherit;
+    margin-top: -62px;
+    margin-left: -2px;
+    height: 67px;
+    width: 109px;
+    /* color: #000000;
+    border: 0.15em solid currentColor;
+    border-radius: 0.15em; */
+    transform: translateY(-0.075em);
+    display: grid;
+    place-content: center;
+}
+input[name=ppInfo]::before {
+    content: "";
+    height: 67px;
+    width: 109px;
+    transform: scale(0);
+    transition: 120ms transform ease-in-out;
+    background-color: #f7080846;
+}
+input[name=ppInfo]:checked::before {
+    transform: scale(1);
+}
+
+.ppSecondN {
+    margin-top: 5px;
+}
+.ppSurname {
+    margin-top: 5px;
+}

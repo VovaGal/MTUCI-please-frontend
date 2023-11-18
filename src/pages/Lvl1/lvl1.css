@@ -1,0 +1,103 @@
+.game{
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    z-index: 10;
+}
+
+.header {
+    background-image: 
+    url(
+        ../../assets/mtuciart.svg);
+    background-size: contain;
+    height: 288px;
+    width: 1280px;
+    background-repeat:no-repeat;
+  }
+
+.gameArea {
+    display: flex;
+}
+
+.window {
+    background-image:   
+    url(
+        ../../assets/personbg.svg);
+    background-size: contain;
+    height: 432px;
+    width: 512px;
+
+    background-repeat:no-repeat; 
+  }
+
+.person {
+background-image:   
+url(
+        ../../assets/bellyW.svg);
+    background-size: fill;
+    height: 432px;
+    width: 512px;
+    margin: 0 0;
+    background-repeat:no-repeat; 
+}
+
+.table {
+    display: flex;
+    background-image: 
+    url(
+        ../../assets/table.svg);
+    background-size: contain;
+    height: 432px;
+    width: 768px;
+    background-repeat:no-repeat; 
+}
+
+.buttons {
+    display: flex;
+    gap: 40px;
+    width: 50%;
+    margin: 46% -70%;
+}
+.btnY {
+    background: hsl(200, 100%, 50%, 0.1);
+    border: 1px solid hsl(118, 54%, 36%);
+    color: hsl(130, 55%, 30%);
+    padding: 0.25em 0.5em;
+    border-radius: 0.25em;
+    cursor: pointer;
+    outline: none;
+    width: 200px;
+    height: 60px;
+    font-size: 2rem;
+    font-weight: bold;
+}
+.btnN {
+    background: hsl(200, 100%, 50%, 0.1);
+    border: 1px solid hsl(0, 78%, 47%);
+    color: hsl(0, 100%, 50%);
+    padding: 0.25em 0.5em;
+    border-radius: 0.25em;
+    cursor: pointer;
+    outline: none;
+    width: 200px;
+    height: 60px;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.docs {
+    display: flex;
+    width: 768;
+    height: 320;
+}
+
+/* checkboxes shenanigans */
+
+input[type="checkbox"] {
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: #fff;
+    margin: 0;
+}
