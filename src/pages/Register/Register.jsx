@@ -1,8 +1,7 @@
 import React, { useEffect } from "react";
 import ReactDOM from "react-dom";
-import { Formik, Form, useField} from "formik";
+import { Formik, Form, useField, useFormikContext } from "formik";
 import * as Yup from "yup";
-import styled from "@emotion/styled";
 import "./styles.css";
 import "./styles-custom.css";
 
@@ -26,7 +25,7 @@ const MyTextInput = ({ label, ...props }) => {
 function Register(){
   return (
     <>
-      <h1>Subscribe!</h1>
+      <h1>Register new account!</h1>
       <Formik
         initialValues={{
           email: "",
@@ -42,7 +41,7 @@ function Register(){
             .required("Required"),
           password: Yup.string()
             .max(20, "Must be 20 characters or less")
-            .required("Required")
+            .required("Required"),
         
         })}
         onSubmit={async (values, { setSubmitting }) => {
@@ -75,5 +74,6 @@ function Register(){
     </>
   );
 }
+
 
 export default Register
