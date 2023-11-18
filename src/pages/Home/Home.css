@@ -1,0 +1,53 @@
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+      monospace;
+  }
+  
+
+.Home {
+    text-align: center;
+  }
+  
+  .App-logo {
+    height: 40vmin;
+    pointer-events: none;
+  }
+  
+  /* boostrap form style */
+  
+  .form-inline {
+    width: 100%;
+  }
+  
+  .form-group {
+    width: 90%;
+  }
+  
+  .input-group {
+    width: 90% !important;
+  }
+  
+  .form-control {
+    width: 80% !important;
+  }
+  
+  span.input-group-addon {
+    width: 50px !important;
+  }
+  
+  .center {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 5%;
+  }
+  
