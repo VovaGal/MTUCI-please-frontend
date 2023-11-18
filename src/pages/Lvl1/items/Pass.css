@@ -1,0 +1,62 @@
+.pass {
+    display: flex;
+    background-image:   
+    url(
+        ../../../assets/pass.svg);
+    background-size: contain;
+    margin-top: 20px;
+    margin-left: 140px;
+    height: 128px;
+    width: 205px;
+    background-repeat:no-repeat; 
+}
+
+.pPic {
+    background-image:   
+    url(
+        ../../../assets/bellyW.svg);
+    background-size: cover;
+    /* margin-top: 20px;
+    margin-left: 140px; */
+    margin-left: 11px;
+    margin-top: 15px;
+    height: 96px;
+    width: 81px;
+    background-repeat:no-repeat; 
+}
+input[name=pass] {
+    appearance: none;
+    background-color: #ffffff00;
+    margin: 0;
+    font: inherit;
+    height: 96px;
+    width: 81px;
+    /* color: #000000;
+    border: 0.15em solid currentColor;
+    border-radius: 0.15em; */
+    transform: translateY(-0.075em);
+    display: grid;
+    place-content: center;
+}
+input[name=pass]::before {
+    content: "";
+    height: 96px;
+    width: 81px;
+    transform: scale(0);
+    transition: 120ms transform ease-in-out;
+    background-color: #f7080846;
+}
+input[name=pass]:checked::before {
+    transform: scale(1);
+}
+
+.pInfo {
+    margin-left: 16px;
+    margin-top: 43px;
+}
+.pSecondN {
+    margin-top: 4px;
+}
+.pSurname {
+    margin-top: 5px;
+}
