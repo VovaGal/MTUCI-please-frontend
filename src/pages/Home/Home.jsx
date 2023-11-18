@@ -20,6 +20,11 @@ function App() {
 
   const [currentUser, setCurrentUser] = useState();
   const [registrationToggle, setRegistrationToggle] = useState(false);
+  // TODO: гугли что такое formik 
+  // TODO: вынести логику с беком(ручки) по модульной архитектуре
+  // TODO: прочитать что такое HOC и вынести туда логику авторизации
+  // TODO: гугли что такое layout и сделай его
+  // TODO: картинки в svg формате
   const [email, setEmail] = useState('');
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
@@ -34,6 +39,7 @@ function App() {
     });
   }, []);
 
+  // TODO: странная реализация дря реакта
   function update_form_btn() {
     if (registrationToggle) {
       document.getElementById("form_btn").innerHTML = "Register";
