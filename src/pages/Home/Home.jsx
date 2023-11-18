@@ -4,11 +4,28 @@
   // TODO: гугли что такое layout и сделай его
   // TODO: картинки в svg формате
 
-import react from "react";
+import {Routes, Route, useNavigate} from 'react-router-dom';
+
+
+
+
 
 function Home() {
+  const navigate = useNavigate();
+
+  const navigateLogin = () => {
+    navigate('/register');
+  };
   return (
-    <h1>hello</h1>
+    <div>
+      <div>
+        <button type="button" onClick={navigateLogin}>Register</button>
+        <hr />
+        <Routes>
+          <Route path="/register" element={<Register />} />
+        </Routes>
+      </div>
+    </div>
   );
 }
 
