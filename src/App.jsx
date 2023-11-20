@@ -8,6 +8,10 @@ const Lvl1 = lazy(() => import("./pages/Lvl1/Lvl1.jsx"));
 const Register = lazy(() => import("./pages/Register/Register.jsx"));
 const Login = lazy(() =>  import('./pages/Login/Login.jsx'))
 
+// import axios from "axios";
+// axios.defaults.xsrfCookieName = 'csrftoken';
+// axios.defaults.xsrfHeaderName = 'X-CSRFToken';
+// axios.defaults.withCredentials = true;
 
 function App() {
   return (
