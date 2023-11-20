@@ -1,28 +1,11 @@
-import React, { useEffect } from "react";
-import ReactDOM from "react-dom";
-import { Formik, Form, useField, useFormikContext } from "formik";
+import { Formik, Form } from "formik";
 import * as Yup from "yup";
 import "./styles.css";
 import "./styles-custom.css";
-
-const MyTextInput = ({ label, ...props }) => {
-  // useField() returns [formik.getFieldProps(), formik.getFieldMeta()]
-  // which we can spread on <input> and alse replace ErrorMessage entirely.
-  const [field, meta] = useField(props);
-  return (
-    <>
-      <label htmlFor={props.id || props.name}>{label}</label>
-      <input className="text-input" {...field} {...props} />
-      {meta.touched && meta.error ? (
-        <div className="error">{meta.error}</div>
-      ) : null}
-    </>
-  );
-};
-
+import { MyTextInput } from "./Components";
 
 // And now we can use these
-function Register(){
+function Register() {
   return (
     <>
       <h1>Register new account!</h1>
@@ -40,12 +23,14 @@ function Register(){
             .max(15, "Must be 15 characters or less")
             .required("Required"),
           password: Yup.string()
-            .max(20, "Must be 20 characters or less")
-            .required("Required"),
-        
+            .required("Required")
+            .matches(
+              /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/,
+              "Must Contain 8 Characters, One Uppercase, One Lowercase, One Number and One Special Case Character"
+            ),
         })}
         onSubmit={async (values, { setSubmitting }) => {
-          await new Promise(r => setTimeout(r, 500));
+          await new Promise((r) => setTimeout(r, 500));
           setSubmitting(false);
         }}
       >
@@ -66,14 +51,15 @@ function Register(){
             label="Password"
             name="password"
             type="text"
-            placeholder="qweQWE!@#"
+            placeholder="qweQWE!@#1"
           />
-          <button type="submit">Submit</button>
+          <div>
+            <button type="submit">Submit</button>
+          </div>
         </Form>
       </Formik>
     </>
   );
 }
 
-
-export default Register
+export default Register;
