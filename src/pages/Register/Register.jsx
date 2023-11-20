@@ -1,11 +1,17 @@
-import { Formik, Form } from "formik";
+import { Formik, Form} from "formik";
 import * as Yup from "yup";
 import "./styles.css";
 import "./styles-custom.css";
 import { MyTextInput } from "./Components";
+import axios from "axios";
+
+import { Routes, Route, useNavigate } from "react-router-dom";
 
 // And now we can use these
 function Register() {
+
+  const navigate = useNavigate();
+
   return (
     <>
       <h1>Register new account!</h1>
@@ -32,6 +38,15 @@ function Register() {
         onSubmit={async (values, { setSubmitting }) => {
           await new Promise((r) => setTimeout(r, 500));
           setSubmitting(false);
+          await axios
+            .post("http://localhost:8000/api/register", values)
+            .then((response) => {
+              console.log(response.data);
+              navigate("/login")
+            })
+            .catch((error) => {
+              console.error(error);
+            });
         }}
       >
         <Form>
