@@ -6,14 +6,18 @@ import './lvl1.css';
 import './items/Pass.css';
 import './items/Passport.css';
 import './items/UniID.css';
-import { handleOnChangePassport } from '../../funcs/Checks.jsx';
 
 import Pass from './items/Pass.jsx';
 import Passport from './items/Passport.jsx';
 import UniID from './items/UniID.jsx';
+import { useWindowSize } from '../../hooks/Resizer.jsx';
 
 
 export default function Lvl1() {
+
+  const [width, height] = useWindowSize();
+  console.log("width", width);
+  console.log("height", height);
 
   const [points, setPoints] = useState(0);
   const handleCounter = () => {
