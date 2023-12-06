@@ -11,6 +11,7 @@
     background-repeat:no-repeat; 
 }
 
+/*Pic */
 .pPic {
     background-image:   
     url(
@@ -24,7 +25,7 @@
     width: 81px;
     background-repeat:no-repeat; 
 }
-input[name=pass] {
+input[name=pPic] {
     appearance: none;
     background-color: #ffffff00;
     margin: 0;
@@ -38,7 +39,7 @@ input[name=pass] {
     display: grid;
     place-content: center;
 }
-input[name=pass]::before {
+input[name=pPic]::before {
     content: "";
     height: 96px;
     width: 81px;
@@ -46,14 +47,44 @@ input[name=pass]::before {
     transition: 120ms transform ease-in-out;
     background-color: #f7080846;
 }
-input[name=pass]:checked::before {
+input[name=pPic]:checked::before {
     transform: scale(1);
 }
+
+/* Info */
 
 .pInfo {
     margin-left: 16px;
     margin-top: 43px;
 }
+input[name=pInfo] {
+    appearance: none;
+    background-color: #ffffff00;
+    margin: 0;
+    font: inherit;
+    margin-top: 40px;
+    margin-left: -60px;
+    height: 67px;
+    width: 109px;
+    /* color: #000000;
+    border: 0.15em solid currentColor;
+    border-radius: 0.15em; */
+    transform: translateY(-0.075em);
+    display: grid;
+    place-content: center;
+}
+input[name=pInfo]::before {
+    content: "";
+    height: 67px;
+    width: 109px;
+    transform: scale(0);
+    transition: 120ms transform ease-in-out;
+    background-color: #f7080846;
+}
+input[name=pInfo]:checked::before {
+    transform: scale(1);
+}
+
 .pSecondN {
     margin-top: 4px;
 }

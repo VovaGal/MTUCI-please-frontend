@@ -89,9 +89,23 @@ url(
 
 .docs {
     display: flex;
-    width: 768;
+    width: 768; 
     height: 320;
 }
+
+/* keep these here if need to format */
+.ps {
+
+}
+
+.id {
+
+}
+
+.psp {
+
+}
+
 
 /* checkboxes shenanigans */
 

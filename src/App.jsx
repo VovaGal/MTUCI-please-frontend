@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { lazy } from 'react';
 
-const Home = lazy(() =>  import('./pages/Home.jsx'))
+const Home = lazy(() =>  import('./pages/Home/Home.jsx'))
 const Aaa = lazy(() =>  import('./pages/Aaa.jsx'))
 const Lvl1 = lazy(() =>  import('./pages/Lvl1/Lvl1.jsx'))
 
