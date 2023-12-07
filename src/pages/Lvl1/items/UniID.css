@@ -8,6 +8,7 @@
     height: 128px;
     width: 410px;
     background-repeat:no-repeat; 
+    display: flex;
 }
 
 input[name=uniID] {
@@ -34,4 +35,127 @@ input[name=uniID]::before {
 }
 input[name=uniID]:checked::before {
     transform: scale(1);
+}
+
+
+
+/* Date */
+.idDate {
+    margin-top: 55px;
+    margin-left: 25px;
+
+}
+input[name=idDate] {
+    appearance: none;
+    background-color: #ffffff00;
+    margin: 0;
+    font: inherit;
+    margin-top: -18px;
+    margin-left: -6px;
+    height: 20px;
+    width: 109px;
+    /* color: #000000;
+    border: 0.15em solid currentColor;
+    border-radius: 0.15em; */
+    transform: translateY(-0.075em);
+    display: grid;
+    place-content: center;
+}
+input[name=idDate]::before {
+    content: "";
+    height: 20px;
+    width: 109px;
+    transform: scale(0);
+    transition: 120ms transform ease-in-out;
+    background-color: #f7080846;
+}
+input[name=idDate]:checked::before {
+    transform: scale(1);
+}
+
+.secPage {
+    display: flex;
+}
+
+
+/*Pic */
+.idPic {
+    background-image:   
+    url(
+        ../../../assets/bellyW.svg);
+    background-size: cover;
+    /* margin-left: 22px; */
+    margin-top: 80px;
+    margin-left: 17px;
+    height: 73px;
+    width: 58px;
+    background-repeat:no-repeat; 
+}
+input[name=idPic] {
+    appearance: none;
+    background-color: #ffffff00;
+    margin: 0;
+    font: inherit;
+    height: 73px;
+    width: 58px;
+    /* color: #000000;
+    border: 0.15em solid currentColor;
+    border-radius: 0.15em; */
+    transform: translateY(-0.075em);
+    display: grid;
+    place-content: center;
+}
+input[name=idPic]::before {
+    content: "";
+    height: 73px;
+    width: 58px;
+    transform: scale(0);
+    transition: 120ms transform ease-in-out;
+    background-color: #f7080846;
+}
+input[name=idPic]:checked::before {
+    transform: scale(1);
+}
+
+
+
+/* Info */
+.idInfo {
+    margin-top: 83px;
+    margin-left: 31px;
+}
+
+input[name=idInfo] {
+    appearance: none;
+    background-color: #ffffff00;
+    margin: 0;
+    font: inherit;
+    margin-top: -62px;
+    margin-left: -2px;
+    height: 67px;
+    width: 109px;
+    /* color: #000000;
+    border: 0.15em solid currentColor;
+    border-radius: 0.15em; */
+    transform: translateY(-0.075em);
+    display: grid;
+    place-content: center;
+}
+input[name=idInfo]::before {
+    content: "";
+    height: 67px;
+    width: 109px;
+    transform: scale(0);
+    transition: 120ms transform ease-in-out;
+    background-color: #f7080846;
+}
+input[name=idInfo]:checked::before {
+    transform: scale(1);
+}
+
+.idSecondN {
+    margin-top: 5px;
+}
+.idSurname {
+    margin-top: 5px;
 }
