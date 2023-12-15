@@ -9,11 +9,12 @@ export const LoginModal = () => {
     setIsisHaveAccount(!isHaveAccount);
   };
 
-  
+
 
   return (
     <>
       <div className="modal-content">
+        <h3>You need an account to play!</h3>
         <div className="modal-forms">
           {isHaveAccount ? <Login /> : <Register />}
         </div>

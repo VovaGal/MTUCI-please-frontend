@@ -1,9 +1,10 @@
-import { Formik, Form, useField } from "formik";
+import { Formik, Form } from "formik";
 import * as Yup from "yup";
 import { MyTextInput } from "./Components";
-
+import React, { useContext } from 'react';
 import axios from "axios";
-import { Routes, Route, useNavigate } from "react-router-dom";
+import { UserContext } from "./Home";
+import { checkAuth } from "../../api/user";
 
 axios.defaults.xsrfCookieName = 'csrftoken';
 axios.defaults.xsrfHeaderName = 'X-CSRFToken';
@@ -11,6 +12,8 @@ axios.defaults.withCredentials = true;
 
 // And now we can use these
 function Login() {
+
+  const { setUser, setIsModalOpen } = useContext(UserContext);
 
 
   return (
@@ -32,8 +35,9 @@ function Login() {
           setSubmitting(false);
           await axios
             .post("http://localhost:8000/api/login", values)
-            .then((response) => {
-              console.log(response.data);
+            .then(() => {
+              checkAuth().then((user) => setUser(user));
+              setIsModalOpen(false);
             })
             .catch((error) => {
               console.error(error);
