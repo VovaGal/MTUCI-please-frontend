@@ -57,7 +57,7 @@ function App() {
       client.post(
         "/api/login",
         {
-          email: email,
+          username: username,
           password: password
         }
       ).then(function(res) {
