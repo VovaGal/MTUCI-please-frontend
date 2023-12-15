@@ -31,7 +31,7 @@ function Home() {
           <button className="modal-close-btn" onClick={toggleModal}>Close Modal</button>
         </div>
       )}
-    
+      
     </>
   );
 }
