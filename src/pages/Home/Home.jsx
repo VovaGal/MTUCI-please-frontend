@@ -19,7 +19,31 @@ function Home() {
   };
 
 
+<<<<<<< HEAD
+  function submitRegistration(e) {
+    e.preventDefault();
+    client.post(
+      "/api/register",
+      {
+        email: email,
+        username: username,
+        password: password
+      }
+    ).then(function(res) {
+      client.post(
+        "/api/login",
+        {
+          username: username,
+          password: password
+        }
+      ).then(function(res) {
+        setCurrentUser(true);
+      });
+    });
+  }
+=======
   const navigate = useNavigate();
+>>>>>>> 5e07574b19dc8d24ab1246e37c0df93fff058404
 
   return (
     <>
