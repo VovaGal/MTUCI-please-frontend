@@ -64,7 +64,7 @@ function Register() {
           <MyTextInput
             label="Password"
             name="password"
-            type="text"
+            type="password"
             placeholder="qweQWE!@#1"
           />
           <div>

@@ -50,7 +50,7 @@ function Login() {
           <MyTextInput
             label="Password"
             name="password"
-            type="text"
+            type="password"
             placeholder="qweQWE!@#"
           />
           <div>

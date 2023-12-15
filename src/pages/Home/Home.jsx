@@ -18,6 +18,7 @@ function Home() {
     setIsOpen(!isOpen);
   };
 
+  const navigate = useNavigate();
 
   return (
     <>
