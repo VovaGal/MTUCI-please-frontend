@@ -5,7 +5,7 @@
 // TODO: картинки в svg формате
 
 
-// import "./Home.css";
+import "./Home.css";
 import React, { useState } from "react";
 import { Routes, Route, useNavigate } from "react-router-dom";
 
@@ -17,7 +17,7 @@ function Home() {
   const toggleModal = () => {
     setIsOpen(!isOpen);
   };
-  
+
 
   return (
     <>
