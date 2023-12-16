@@ -2,13 +2,11 @@ import { Formik, Form } from "formik";
 import * as Yup from "yup";
 import { MyTextInput } from "./Components";
 import React, { useContext } from 'react';
-import axios from "axios";
 import { UserContext } from "./Home";
 import { checkAuth } from "../../api/user";
 
-axios.defaults.xsrfCookieName = 'csrftoken';
-axios.defaults.xsrfHeaderName = 'X-CSRFToken';
-axios.defaults.withCredentials = true;
+
+import axios from "../../api/axiosConfig";
 
 // And now we can use these
 function Login() {

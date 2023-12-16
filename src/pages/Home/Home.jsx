@@ -6,12 +6,11 @@
 
 import "./Home.css";
 import React, { useEffect, useState, createContext } from "react";
-import { Routes, Route, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 import { LoginModal } from "./LoginModal.jsx";
 import { checkAuth } from "../../api/user.jsx";
 import { loggingOut } from "../../api/logout.jsx";
-
 
 export const UserContext = createContext();
 
@@ -32,13 +31,13 @@ function Home() {
     const success = await loggingOut();
     setUser(null);
     if (success) {
-        alert('Successfully logged out');
-        // setUser(null);
+      alert("Successfully logged out");
+      // setUser(null);
     }
     // else {
     //     alert('Logout failed');
     // }
-};
+  };
 
   return (
     <UserContext.Provider value={{ user, setUser, setIsModalOpen }}>
@@ -53,7 +52,9 @@ function Home() {
           <button onClick={toggleModalStatus}> Login </button>
         </>
       )}
-      <button onClick={() => user ? navigate("/lvl1") : setIsModalOpen(true)}>Level 1</button>
+      <button onClick={() => (user ? navigate("/lvl1") : setIsModalOpen(true))}>
+        Level 1
+      </button>
       {isModalOpen && (
         <div className="modal-window">
           <LoginModal />
