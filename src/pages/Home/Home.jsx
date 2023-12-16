@@ -5,14 +5,12 @@
 // TODO: картинки в svg формате
 
 import "./Home.css";
-import React, { useEffect, useState, createContext } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-
 import { LoginModal } from "./LoginModal.jsx";
 import { checkAuth } from "../../api/user.jsx";
 import { loggingOut } from "../../api/logout.jsx";
-
-export const UserContext = createContext();
+import { UserContext } from "../../funcs/userContext.jsx";
 
 function Home() {
   const navigate = useNavigate();
@@ -40,7 +38,7 @@ function Home() {
   };
 
   return (
-    <UserContext.Provider value={{ user, setUser, setIsModalOpen }}>
+    <UserContext.Provider value={{ setUser, setIsModalOpen }}>
       {user ? (
         <div className="usename-logout">
           <h1> {user.user.username} </h1>

@@ -1,7 +1,7 @@
 import { Formik, Form } from "formik";
 import * as Yup from "yup";
 import { MyTextInput } from "./Components";
-import { UserContext } from "./Home";
+import { UserContext } from "../../funcs/userContext.jsx";
 import React, { useContext } from 'react';
 import { checkAuth } from "../../api/user";
 
