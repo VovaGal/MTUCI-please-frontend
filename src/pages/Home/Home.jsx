@@ -5,9 +5,9 @@
 // TODO: картинки в svg формате
 
 import "./Home.css";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { LoginModal } from "./LoginModal.jsx";
+import { LoginModal } from "./LoginModalComponent.jsx";
 import { checkAuth } from "../../api/user.jsx";
 import { loggingOut } from "../../api/logout.jsx";
 import { UserContext } from "../../funcs/userContext.jsx";
@@ -30,11 +30,10 @@ function Home() {
     setUser(null);
     if (success) {
       alert("Successfully logged out");
-      // setUser(null);
+      setUser(null);
+    } else {
+      alert("Logout failed");
     }
-    // else {
-    //     alert('Logout failed');
-    // }
   };
 
   return (

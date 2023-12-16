@@ -5,8 +5,8 @@ import { lazy, Suspense } from "react";
 const Home = lazy(() => import("./pages/Home/Home.jsx"));
 const Aaa = lazy(() => import("./pages/Aaa.jsx"));
 const Lvl1 = lazy(() => import("./pages/Lvl1/Lvl1.jsx"));
-const Register = lazy(() => import("./pages/Home/Register.jsx"));
-const Login = lazy(() => import("./pages/Home/Login.jsx"));
+const Register = lazy(() => import("./pages/Home/RegisterComponent.jsx"));
+const Login = lazy(() => import("./pages/Home/LoginComponent.jsx"));
 
 // import axios from "axios";
 // axios.defaults.xsrfCookieName = 'csrftoken';
