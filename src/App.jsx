@@ -1,67 +1,23 @@
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { lazy, Suspense } from "react";
 
 const Home = lazy(() => import("./pages/Home/Home.jsx"));
 const Lvl1 = lazy(() => import("./pages/Lvl1/Lvl1.jsx"));
-const Register = lazy(() => import("./pages/Home/RegisterComponent.jsx"));
-const Login = lazy(() => import("./pages/Home/LoginComponent.jsx"));
-
-// import axios from "axios";
-// axios.defaults.xsrfCookieName = 'csrftoken';
-// axios.defaults.xsrfHeaderName = 'X-CSRFToken';
-// axios.defaults.withCredentials = true;
 
 function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" elements={<NavWrapper />}>
-          <Route
-            path="/"
-            element={
-              <Suspense fallback="Loading...">
-                <Home />
-              </Suspense>
-            }
-          />
-          <Route
-            path="/lvl1"
-            element={
-              <Suspense fallback="Loading...">
-                <Lvl1 />
-              </Suspense>
-            }
-          />
-          <Route
-            path="/register"
-            element={
-              <Suspense fallback="Loading...">
-                <Register />
-              </Suspense>
-            }
-          />
-          <Route
-            path="/login"
-            element={
-              <Suspense fallback="Loading...">
-                <Login />
-              </Suspense>
-            }
-          />
-        </Route>
+        <Route
+          path="/"
+          element={<Suspense fallback="Loading..."><Home/></Suspense>}/>
+        <Route
+          path="/lvl1"
+          element={<Suspense fallback="Loading..."><Lvl1/></Suspense>}/>
       </Routes>
     </Router>
   );
 }
 
-function NavWrapper() {
-  return (
-    <>
-      <nav style={{ display: "flex", gap: "1rem" }}>
-        <Link to="/">Home</Link>
-      </nav>
-    </>
-  );
-}
 
 export default App;
