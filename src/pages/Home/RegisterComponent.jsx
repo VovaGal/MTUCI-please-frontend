@@ -1,15 +1,10 @@
 import { Formik, Form } from "formik";
 import * as Yup from "yup";
-import { MyTextInput } from "./Components";
-import axios from "axios";
-import { UserContext } from "./Home";
-import React, { useContext } from 'react';
-import { checkAuth } from "../../api/user";
-
-
-axios.defaults.xsrfCookieName = "csrftoken";
-axios.defaults.xsrfHeaderName = "X-CSRFToken";
-axios.defaults.withCredentials = true;
+import { MyTextInput } from "./TextInputComponent.jsx";
+import { UserContext } from "../../funcs/userContext.jsx";
+import { useContext } from "react";
+import { checkAuth } from "../../api/user.jsx";
+import { registerRequest } from "../../api/register.jsx";
 
 // And now we can use these
 function Register() {
@@ -41,15 +36,13 @@ function Register() {
         onSubmit={async (values, { setSubmitting }) => {
           await new Promise((r) => setTimeout(r, 500));
           setSubmitting(false);
-          await axios
-            .post("http://localhost:8000/api/register", values)
-            .then(() => {
-              checkAuth().then((user) => setUser(user));
-              setIsModalOpen(false);
-            })
-            .catch((error) => {
-              console.error(error);
-            });
+          const result = await registerRequest(values);
+          if (result) {
+            checkAuth().then((user) => setUser(user));
+            setIsModalOpen(false);
+          } else {
+            alert("Login failed");
+          }
         }}
       >
         <Form>

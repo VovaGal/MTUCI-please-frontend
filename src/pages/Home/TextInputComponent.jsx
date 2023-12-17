@@ -1,5 +1,4 @@
-import React from 'react';
-import { Formik, Form, useField } from "formik";
+import { useField } from "formik";
 
 export const MyTextInput = ({ label, ...props }) => {
   // useField() returns [formik.getFieldProps(), formik.getFieldMeta()]

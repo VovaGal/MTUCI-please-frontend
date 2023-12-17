@@ -1,7 +1,7 @@
 import { useState } from "react";
 
-import Login from "./Login.jsx";
-import Register from "./Register.jsx";
+import Login from "./LoginComponent.jsx";
+import Register from "./RegisterComponent.jsx";
 
 export const LoginModal = () => {
   const [isHaveAccount, setIsisHaveAccount] = useState(true);
