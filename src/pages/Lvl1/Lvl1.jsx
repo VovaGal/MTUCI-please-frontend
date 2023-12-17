@@ -12,18 +12,32 @@ import Passport from './items/Passport.jsx';
 import UniID from './items/UniID.jsx';
 import { useWindowSize } from '../../hooks/Resizer.jsx';
 
-import { saveDocs } from '../../api/docsPull.jsx';
-
+import docInfo from '../../api/docsPull.jsx';
+import { DataContext } from '../../funcs/DataContext.jsx';
 
 
 export default function Lvl1() {
 
-  useEffect(() => {
-    console.log('render')
-  })
-  
+  const [buttonType, setType] = useState()
+  const [data, setData] = useState([])
+  const fetchData = async () => {
+    const result = await docInfo();
+    setData(result);
+  }
+    useEffect(() => {
+    const fetchData = async () => {
+      const result = await docInfo();
+      setData(result);
+      localStorage.setItem("ITEMS", JSON.stringify(result))
+    };
+    console.log("data is", data)
+    fetchData();
+  }, [buttonType]);
+
   const handleClick = () => {
-    saveDocs()
+    fetchData();
+    setType(data.error_code)
+    console.log(data.error_code)
   }
 
   const [width, height] = useWindowSize();
@@ -71,7 +85,7 @@ export default function Lvl1() {
               <button className='btnY' onClick={handleClick} type="button" >
                 Approve
               </button>
-              <button className='btnN' type="button"
+              <button className='btnN' onClick={() => setType('foo')} type="button"
               >Deny
               </button>
 

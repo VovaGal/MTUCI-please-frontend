@@ -1,10 +1,24 @@
 import React, { useState, useEffect } from 'react';
 import './Passport.css';
-// import { saveDocs } from '../../../funcs/docsSave.jsx';
+import docInfo from '../../../api/docsPull';
 
 const Passport = () => {
 
-  // const list = saveDocs();
+  // const [data, setData] = useState([]);
+
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     const result = await docInfo();
+  //     setData(result);
+  //   };
+  //   console.log("data is", data)
+  //   fetchData();
+  // }, []);
+
+  // useEffect(() => {
+  //   console.log("");
+  // });
+
 
   const [isCheckedPic, setIsCheckedPic] = useState(false);
   const [isCheckedInfo, setIsCheckedInfo] = useState(false);
@@ -25,13 +39,13 @@ const Passport = () => {
         <div className='ppInfo'>
           <div>
             {/* <div className='ppSurname'>
-              {list.passport_surname}
+              {data.passport_surname}
             </div>
             <div className='ppName'>
-              {stuff.passport_name}
+              {data.passport_name}
             </div>
             <div className='ppSecondN'>
-              {stuff.passport_middle_name}
+              {data.passport_middle_name}
             </div> */}
 
           </div>

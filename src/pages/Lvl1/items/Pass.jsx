@@ -1,37 +1,32 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo, useContext } from 'react';
 import './Pass.css';
-// import { saveDocs } from '../../../funcs/docsSave.jsx';
-import { saveDocs } from '../../../api/docsPull';
+import docInfo from '../../../api/docsPull';
+import { DataContext } from '../../../funcs/DataContext';
 
-import axios from "axios";
-
-axios.defaults.xsrfCookieName = "csrftoken";
-axios.defaults.xsrfHeaderName = "X-CSRFToken";
-axios.defaults.withCredentials = true;
 
 const Pass = () => {
-
-  const [stuff, setStuff] = useState(() => {
-    const localValue = localStorage.getItem("ITEMS")
-    if (localValue == null) return saveDocs()
-
-    return JSON.parse(localValue)
-  })
-
-  useEffect(() => {
-    localStorage.setItem("ITEMS", JSON.stringify(stuff))
-  }, [stuff])
-
-
-  // const list = saveDocs()
-
-  
-  // console.log(list)
 
   const [isCheckedPic, setIsCheckedPic] = useState(false);
   const [isCheckedInfo, setIsCheckedInfo] = useState(false);
 
+  const { data, fetchData } = useContext(DataContext);
+  // const [data, setData] = useState(() => {
+  //   const localValue = localStorage.getItem("ITEMS")
+  //   if (localValue == null) return []
+
+  //   return JSON.parse(localValue)
+  // })
+
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     const result = await localStorage.getItem("ITEMS");
+  //     setData(result);
+  //   }
+  //   fetchData();
+  //   }, []);
+
   return (
+
     <div className='pass' >
 
       <div className='pPic'>
@@ -44,14 +39,14 @@ const Pass = () => {
       </div>
 
       <div className='pInfo'>
-        <div className='pSurname'>
-          {saveDocs().surname} *****
+        {/* <div className='pSurname'>
+          {data.surname}
         </div>
-        {/* <div className='pName'>
-          {saveDocs().name}
+        <div className='pName'>
+          {data.name}
         </div>
         <div className='pSecondN'>
-          {saveDocs().middle_name}
+          {data.middle_name}
         </div> */}
       </div>
       <Check id='pInfo' checked={isCheckedInfo} onChange={handleOnChangeInfo => {
