@@ -41,32 +41,40 @@ function Home() {
 
   return (
     <UserContext.Provider value={{ setUser, setIsModalOpen }}>
-      {user ? (
-        <div className="usename-logout">
-          <h1> {user.user.username} </h1>
-          <h3> {user.user.first_level_score} points in first lvl</h3>
-          <button onClick={handleLogout}>Logout</button>
-        </div>
-      ) : (
-        <>
-          <button onClick={toggleModalStatus}> Login </button>
-        </>
-      )}
-      <button
-        onClick={() =>
-          user ? (fetchData(), navigate("/lvl1")) : setIsModalOpen(true)
-        }
-      >
-        Level 1
-      </button>
-      {isModalOpen && (
-        <div className="modal-window">
-          <LoginModal />
-          <button className="modal-close-btn" onClick={toggleModalStatus}>
-            Close Modal
-          </button>
-        </div>
-      )}
+      <div className="Home">
+        {user ? (
+          <div className="username-logout">
+            <h2> Hello, {user.user.username}! </h2>
+            <h2>
+              {" "}
+              You have {user.user.first_level_score} points in first lvl{" "}
+            </h2>
+            <button onClick={handleLogout}>Logout</button>
+          </div>
+        ) : !isModalOpen && (
+          <div className="login-btn">
+            <button onClick={toggleModalStatus}> Login </button>
+          </div>
+        )}
+
+        {isModalOpen && (
+          <div className="modal-window">
+            <LoginModal />
+            <button className="modal-close-btn" onClick={toggleModalStatus}>
+              Close
+            </button>
+          </div>
+        )}
+
+        <h1>Welcom to MTUCI PLEASE</h1>
+        <button
+          onClick={() =>
+            user ? (fetchData(), navigate("/lvl1")) : setIsModalOpen(true)
+          }
+        >
+          Level 1
+        </button>
+      </div>
     </UserContext.Provider>
   );
 }
