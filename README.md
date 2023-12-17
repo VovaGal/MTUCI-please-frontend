@@ -27,7 +27,7 @@ The assets folder consists of general assets used in project's elements. Certain
 The funcs folder consists of general functions to be used inside other jsx files. They have been separated as they are either commonly used (increasing optimisation and clairty of the project) or simply been taken out to make major files such as App.jsx, lvl1.jsx etc. more comprehensive.
 
 ### hooks
-The hooks folder currently consists of a single file - window size grab function. However it was decided to keep this folder for future project expansion.
+The hooks folder consists of jsx files related to displaying and interracting with events through props and event listeners (such as changes to checkbox states and window resize).
 
 ### pages
 The pages folder currently consists of two folders responsible for the home page and the first level page (structurally this folder and redirect will not be renames as the project will be further expanded on, adding more levels). Each of the page folders consists of sub elements defining the structure and design of the relative url/page through  jsx and css files. For further clarity of the project's structure first level has also been separated, with its sub-elements located in the items folder. Further separation of css and jsx was deemed unnecessary as the project isn't large enough. 
