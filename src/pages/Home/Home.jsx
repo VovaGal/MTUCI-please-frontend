@@ -5,14 +5,17 @@
 // TODO: картинки в svg формате
 
 import "./Home.css";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { LoginModal } from "./LoginModalComponent.jsx";
 import { checkAuth } from "../../api/user.jsx";
 import { loggingOut } from "../../api/logout.jsx";
 import { UserContext } from "../../funcs/userContext.jsx";
+import { DataContext } from "../../funcs/DataContext.jsx";
 
 function Home() {
+  const { fetchData } = useContext(DataContext);
+
   const navigate = useNavigate();
   const [user, setUser] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -49,7 +52,11 @@ function Home() {
           <button onClick={toggleModalStatus}> Login </button>
         </>
       )}
-      <button onClick={() => (user ? navigate("/lvl1") : setIsModalOpen(true))}>
+      <button
+        onClick={() =>
+          user ? (fetchData(), navigate("/lvl1")) : setIsModalOpen(true)
+        }
+      >
         Level 1
       </button>
       {isModalOpen && (

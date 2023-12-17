@@ -1,67 +1,38 @@
-import React from "react";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
-import { lazy, Suspense } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { lazy, Suspense, useState, useEffect } from "react";
+import { DataContext } from "./funcs/DataContext.jsx";
+import { docInfo } from "./api/docsPull.jsx";
 
 const Home = lazy(() => import("./pages/Home/Home.jsx"));
 const Lvl1 = lazy(() => import("./pages/Lvl1/Lvl1.jsx"));
-const Register = lazy(() => import("./pages/Home/RegisterComponent.jsx"));
-const Login = lazy(() => import("./pages/Home/LoginComponent.jsx"));
-
-// import axios from "axios";
-// axios.defaults.xsrfCookieName = 'csrftoken';
-// axios.defaults.xsrfHeaderName = 'X-CSRFToken';
-// axios.defaults.withCredentials = true;
 
 function App() {
-  return (
-    <Router>
-      <Routes>
-        <Route path="/" elements={<NavWrapper />}>
-          <Route
-            path="/"
-            element={
-              <Suspense fallback="Loading...">
-                <Home />
-              </Suspense>
-            }
-          />
-          <Route
-            path="/lvl1"
-            element={
-              <Suspense fallback="Loading...">
-                <Lvl1 />
-              </Suspense>
-            }
-          />
-          <Route
-            path="/register"
-            element={
-              <Suspense fallback="Loading...">
-                <Register />
-              </Suspense>
-            }
-          />
-          <Route
-            path="/login"
-            element={
-              <Suspense fallback="Loading...">
-                <Login />
-              </Suspense>
-            }
-          />
-        </Route>
-      </Routes>
-    </Router>
-  );
-}
 
-function NavWrapper() {
+  const [data, setData] = useState(null);
+  const fetchData = async () => {
+    const result = await docInfo();
+    setData(result);
+    localStorage.setItem("myData", JSON.stringify(result));
+  };
+
+  useEffect(() => {
+    const loadedData = localStorage.getItem("myData");
+    if (loadedData) {
+      setData(JSON.parse(loadedData));
+    } else {
+      fetchData();
+    }
+  }, []);
+
   return (
-    <>
-      <nav style={{ display: "flex", gap: "1rem" }}>
-        <Link to="/">Home</Link>
-      </nav>
-    </>
+    <DataContext.Provider value={{ data, fetchData }}>
+      <Router>
+        <Routes>
+          <Route path="/"element={<Suspense fallback="Loading..."><Home /></Suspense>}/>
+          <Route path="/lvl1"element={<Suspense fallback="Loading..."><Lvl1 /></Suspense>}/>
+        </Routes>
+      </Router>
+    </DataContext.Provider>
   );
 }
 

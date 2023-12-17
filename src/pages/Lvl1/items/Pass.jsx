@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { useState, useEffect, useMemo, useContext } from 'react';
 import './Pass.css';
 import docInfo from '../../../api/docsPull';
@@ -6,6 +7,38 @@ import { DataContext } from '../../../funcs/DataContext';
 
 const Pass = () => {
 
+=======
+import { useState, useEffect, useContext } from 'react';
+// import './Pass.css';
+// import { saveDocs } from '../../../funcs/docsSave.jsx';
+// import { saveDocs } from '../../../api/docsPull';
+
+import { DataContext } from "../../../funcs/DataContext.jsx";
+
+
+const Pass = () => {
+
+  // const [stuff, setStuff] = useState(() => {
+  //   const localValue = localStorage.getItem("ITEMS")
+  //   if (localValue == null) return saveDocs()
+
+  //   return JSON.parse(localValue)
+  // })
+
+  // useEffect(() => {
+  //   localStorage.setItem("ITEMS", JSON.stringify(stuff))
+  // }, [stuff])
+
+
+  // const list = saveDocs()
+
+
+  // console.log(list)
+  // const { data } = useContext(dataContext);
+
+  const { data } = useContext(DataContext);
+
+>>>>>>> 702e8518a7eb43e06cd126bb24810b15e3ab09b5
   const [isCheckedPic, setIsCheckedPic] = useState(false);
   const [isCheckedInfo, setIsCheckedInfo] = useState(false);
 
@@ -26,20 +59,28 @@ const Pass = () => {
   //   }, []);
 
   return (
+<<<<<<< HEAD
 
+=======
+    <>
+>>>>>>> 702e8518a7eb43e06cd126bb24810b15e3ab09b5
     <div className='pass' >
 
       <div className='pPic'>
-        <Check id='pPic' checked={isCheckedPic} onChange={handleOnChangePic => {
+        <Check id='pPic' checked={isCheckedPic} onChange={() => {
           setIsCheckedPic(!isCheckedPic);
         }} />
-        {/* <div className="resultPass">
+        <div className="resultPass">
           checkbox is {isCheckedPic ? "checked" : "un-checked"}.
-        </div> */}
+        </div>
       </div>
 
       <div className='pInfo'>
+<<<<<<< HEAD
         {/* <div className='pSurname'>
+=======
+        <div className='pSurname'>
+>>>>>>> 702e8518a7eb43e06cd126bb24810b15e3ab09b5
           {data.surname}
         </div>
         <div className='pName'>
@@ -47,15 +88,20 @@ const Pass = () => {
         </div>
         <div className='pSecondN'>
           {data.middle_name}
+<<<<<<< HEAD
         </div> */}
+=======
+        </div>
+>>>>>>> 702e8518a7eb43e06cd126bb24810b15e3ab09b5
       </div>
-      <Check id='pInfo' checked={isCheckedInfo} onChange={handleOnChangeInfo => {
+      <Check id='pInfo' checked={isCheckedInfo} onChange={() => {
         setIsCheckedInfo(!isCheckedInfo);
       }} />
-      {/* <div className="resultPass">
+      <div className="resultPass">
         checkbox is {isCheckedInfo ? "checked" : "un-checked"}.
-      </div> */}
+      </div>
     </div>
+    </>
   )
 }
 
