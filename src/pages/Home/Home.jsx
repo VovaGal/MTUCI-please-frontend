@@ -41,7 +41,7 @@ function Home() {
 };
 
   return (
-    <UserContext.Provider value={{ user, setUser, setIsModalOpen }}>
+    <UserContext.Provider value={{ setUser, setIsModalOpen }}>
       {user ? (
         <div className="usename-logout">
           <h1> {user.user.username} </h1>

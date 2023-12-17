@@ -88,6 +88,6 @@ input[name=pInfo]:checked::before {
 .pSecondN {
     margin-top: 4px;
 }
-.pSurname {
+.pName {
     margin-top: 5px;
 }

@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import { lazy, Suspense } from "react";
 
 const Home = lazy(() => import("./pages/Home/Home.jsx"));
-const Aaa = lazy(() => import("./pages/Aaa.jsx"));
 const Lvl1 = lazy(() => import("./pages/Lvl1/Lvl1.jsx"));
 const Register = lazy(() => import("./pages/Home/Register.jsx"));
 const Login = lazy(() => import("./pages/Home/Login.jsx"));
@@ -26,7 +25,6 @@ function App() {
               </Suspense>
             }
           />
-          <Route path="/Aaa" element={<Aaa />} />
           <Route
             path="/lvl1"
             element={
@@ -62,7 +60,6 @@ function NavWrapper() {
     <>
       <nav style={{ display: "flex", gap: "1rem" }}>
         <Link to="/">Home</Link>
-        <Link to="/Aaa">Aaa</Link>
       </nav>
     </>
   );

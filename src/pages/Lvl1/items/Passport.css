@@ -128,6 +128,6 @@ input[name=ppInfo]:checked::before {
 .ppSecondN {
     margin-top: 5px;
 }
-.ppSurname {
+.ppName {
     margin-top: 5px;
 }

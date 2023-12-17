@@ -156,6 +156,6 @@ input[name=idInfo]:checked::before {
 .idSecondN {
     margin-top: 5px;
 }
-.idSurname {
+.idName {
     margin-top: 5px;
 }
