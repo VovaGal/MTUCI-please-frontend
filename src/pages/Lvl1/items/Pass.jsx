@@ -1,30 +1,9 @@
 import { useState, useEffect, useContext } from 'react';
-// import './Pass.css';
-// import { saveDocs } from '../../../funcs/docsSave.jsx';
-// import { saveDocs } from '../../../api/docsPull';
-
 import { DataContext } from "../../../funcs/DataContext.jsx";
 
 
 const Pass = () => {
 
-  // const [stuff, setStuff] = useState(() => {
-  //   const localValue = localStorage.getItem("ITEMS")
-  //   if (localValue == null) return saveDocs()
-
-  //   return JSON.parse(localValue)
-  // })
-
-  // useEffect(() => {
-  //   localStorage.setItem("ITEMS", JSON.stringify(stuff))
-  // }, [stuff])
-
-
-  // const list = saveDocs()
-
-
-  // console.log(list)
-  // const { data } = useContext(dataContext);
 
   const { data } = useContext(DataContext);
 
@@ -39,9 +18,9 @@ const Pass = () => {
         <Check id='pPic' checked={isCheckedPic} onChange={() => {
           setIsCheckedPic(!isCheckedPic);
         }} />
-        <div className="resultPass">
+        {/* <div className="resultPass">
           checkbox is {isCheckedPic ? "checked" : "un-checked"}.
-        </div>
+        </div> */}
       </div>
 
       <div className='pInfo'>
@@ -58,9 +37,9 @@ const Pass = () => {
       <Check id='pInfo' checked={isCheckedInfo} onChange={() => {
         setIsCheckedInfo(!isCheckedInfo);
       }} />
-      <div className="resultPass">
+      {/* <div className="resultPass">
         checkbox is {isCheckedInfo ? "checked" : "un-checked"}.
-      </div>
+      </div> */}
     </div>
     </>
   )

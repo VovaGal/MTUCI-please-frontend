@@ -11,10 +11,9 @@ import Pass from "./items/Pass.jsx";
 import Passport from "./items/Passport.jsx";
 import UniID from "./items/UniID.jsx";
 import { useWindowSize } from "../../hooks/Resizer.jsx";
-// import { saveDocs } from "../../api/docsPull.jsx";
+
 
 import { DataContext } from "../../funcs/DataContext.jsx";
-import { docInfo } from "../../api/docsPull.jsx";
 
 export default function Lvl1() {
   const { data, fetchData } = useContext(DataContext);
@@ -36,11 +35,17 @@ export default function Lvl1() {
     setPoints(points + 1);
   };
 
+
+  // function passportPresent() {
+
+  // }
+
+
   return (
     <>
       <div className="game">
         <div className="header">
-          <h1>{data.surname}</h1>
+          {/* <h1>{data.surname}</h1> */}
           <div className="calendar"> 18.10.2023 </div>
           <p>{points}</p>
         </div>
@@ -59,6 +64,7 @@ export default function Lvl1() {
                 <UniID />
               </div>
               <div className="psp">
+                {}
                 <Passport />
               </div>
             </div>

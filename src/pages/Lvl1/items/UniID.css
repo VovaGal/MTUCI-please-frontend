@@ -41,8 +41,8 @@ input[name=uniID]:checked::before {
 
 /* Date */
 .idDate {
-    margin-top: 55px;
-    margin-left: 25px;
+    margin-top: 19px;
+    margin-left: 45px;
 
 }
 input[name=idDate] {
@@ -85,10 +85,10 @@ input[name=idDate]:checked::before {
         ../../../assets/bellyW.svg);
     background-size: cover;
     /* margin-left: 22px; */
-    margin-top: 80px;
-    margin-left: 17px;
-    height: 73px;
-    width: 58px;
+    margin-top: 17px;
+    margin-left: 10px;
+    height: 95px;
+    width: 84px;
     background-repeat:no-repeat; 
 }
 input[name=idPic] {
@@ -121,8 +121,8 @@ input[name=idPic]:checked::before {
 
 /* Info */
 .idInfo {
-    margin-top: 83px;
-    margin-left: 31px;
+    margin-top: 43px;
+    margin-left: 15px;
 }
 
 input[name=idInfo] {

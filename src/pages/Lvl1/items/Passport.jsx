@@ -1,10 +1,9 @@
-import React, { useState, useEffect } from 'react';
-import './Passport.css';
-// import { saveDocs } from '../../../funcs/docsSave.jsx';
+import { useState, useEffect, useContext } from 'react';
+import { DataContext } from "../../../funcs/DataContext.jsx";
 
 const Passport = () => {
 
-  // const list = saveDocs();
+  const { data } = useContext(DataContext);
 
   const [isCheckedPic, setIsCheckedPic] = useState(false);
   const [isCheckedInfo, setIsCheckedInfo] = useState(false);
@@ -24,15 +23,15 @@ const Passport = () => {
 
         <div className='ppInfo'>
           <div>
-            {/* <div className='ppSurname'>
-              {list.passport_surname}
+            <div className='ppSurname'>
+              {data.passport_surname}
             </div>
             <div className='ppName'>
-              {stuff.passport_name}
+              {data.passport_name}
             </div>
             <div className='ppSecondN'>
-              {stuff.passport_middle_name}
-            </div> */}
+              {data.passport_middle_name}
+            </div>
 
           </div>
           <Check id='ppInfo' checked={isCheckedInfo} onChange={handleOnChangeInfo => {
