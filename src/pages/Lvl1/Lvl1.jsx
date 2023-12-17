@@ -7,22 +7,22 @@ import "./items/Pass.css";
 import "./items/Passport.css";
 import "./items/UniID.css";
 
-import Pass from "./items/Pass.jsx";
-import Passport from "./items/Passport.jsx";
-import UniID from "./items/UniID.jsx";
 import { useWindowSize } from "../../hooks/Resizer.jsx";
-
-
+import { PassPresence, UniIDPresence, PassportPresence } from "../../funcs/Checks.jsx";
 import { DataContext } from "../../funcs/DataContext.jsx";
 
 export default function Lvl1() {
   const { data, fetchData } = useContext(DataContext);
+  const [points, setPoints] = useState(0);
 
   useEffect(() => {
     console.log("render");
   });
 
   const handleClick = () => {
+    if ( data.error_code == 0 ||  data.error_code == 1 ||  data.error_code == 2 ) {
+      setPoints(points + 1);
+    }
     fetchData();
   };
 
@@ -30,22 +30,10 @@ export default function Lvl1() {
   // console.log("width", width);
   // console.log("height", height);
 
-  const [points, setPoints] = useState(0);
-  const handleCounter = () => {
-    setPoints(points + 1);
-  };
-
-
-  // function passportPresent() {
-
-  // }
-
-
   return (
     <>
       <div className="game">
         <div className="header">
-          {/* <h1>{data.surname}</h1> */}
           <div className="calendar"> 18.10.2023 </div>
           <p>{points}</p>
         </div>
@@ -58,14 +46,13 @@ export default function Lvl1() {
           <form className="table">
             <div className="docs">
               <div className="ps">
-                <Pass />
+                <PassPresence isPresent={data.pass} />
               </div>
               <div className="id">
-                <UniID />
+              <UniIDPresence isPresent={data.studetn_id} />
               </div>
               <div className="psp">
-                {}
-                <Passport />
+              <PassportPresence isPresent={data.passport} />
               </div>
             </div>
 

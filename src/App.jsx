@@ -28,8 +28,8 @@ function App() {
     <DataContext.Provider value={{ data, fetchData }}>
       <Router>
         <Routes>
-          <Route path="/"element={<Suspense fallback="Loading..."><Home /></Suspense>}/>
-          <Route path="/lvl1"element={<Suspense fallback="Loading..."><Lvl1 /></Suspense>}/>
+          <Route path="/" element={<Suspense fallback="Loading..."><Home /></Suspense>} />
+          <Route path="/lvl1" element={<Suspense fallback="Loading..."><Lvl1 /></Suspense>} />
         </Routes>
       </Router>
     </DataContext.Provider>

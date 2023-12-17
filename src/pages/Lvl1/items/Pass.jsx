@@ -1,4 +1,4 @@
-import { useState, useEffect, useContext } from 'react';
+import { useState, useContext } from 'react';
 import { DataContext } from "../../../funcs/DataContext.jsx";
 
 
@@ -12,35 +12,35 @@ const Pass = () => {
 
   return (
     <>
-    <div className='pass' >
+      <div className='pass' >
 
-      <div className='pPic'>
-        <Check id='pPic' checked={isCheckedPic} onChange={() => {
-          setIsCheckedPic(!isCheckedPic);
-        }} />
-        {/* <div className="resultPass">
+        <div className='pPic'>
+          <Check id='pPic' checked={isCheckedPic} onChange={() => {
+            setIsCheckedPic(!isCheckedPic);
+          }} />
+          {/* <div className="resultPass">
           checkbox is {isCheckedPic ? "checked" : "un-checked"}.
         </div> */}
-      </div>
+        </div>
 
-      <div className='pInfo'>
-        <div className='pSurname'>
-          {data.surname}
+        <div className='pInfo'>
+          <div className='pSurname'>
+            {data.surname}
+          </div>
+          <div className='pName'>
+            {data.name}
+          </div>
+          <div className='pSecondN'>
+            {data.middle_name}
+          </div>
         </div>
-        <div className='pName'>
-          {data.name}
-        </div>
-        <div className='pSecondN'>
-          {data.middle_name}
-        </div>
-      </div>
-      <Check id='pInfo' checked={isCheckedInfo} onChange={() => {
-        setIsCheckedInfo(!isCheckedInfo);
-      }} />
-      {/* <div className="resultPass">
+        <Check id='pInfo' checked={isCheckedInfo} onChange={() => {
+          setIsCheckedInfo(!isCheckedInfo);
+        }} />
+        {/* <div className="resultPass">
         checkbox is {isCheckedInfo ? "checked" : "un-checked"}.
       </div> */}
-    </div>
+      </div>
     </>
   )
 }
