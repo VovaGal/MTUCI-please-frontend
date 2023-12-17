@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import React, { Component } from 'react';
-import { approvedCall, deniedCall } from "../../funcs/Refresh.jsx";
+// import { approvedCall, deniedCall } from "../../funcs/Refresh.jsx";
 import './lvl1.css';
 
 import './items/Pass.css';
@@ -12,22 +12,34 @@ import Passport from './items/Passport.jsx';
 import UniID from './items/UniID.jsx';
 import { useWindowSize } from '../../hooks/Resizer.jsx';
 
+import { saveDocs } from '../../api/docsPull.jsx';
+
+
 
 export default function Lvl1() {
+
+  useEffect(() => {
+    console.log('render')
+  })
+  
+  const handleClick = () => {
+    saveDocs()
+  }
 
   const [width, height] = useWindowSize();
   console.log("width", width);
   console.log("height", height);
+
 
   const [points, setPoints] = useState(0);
   const handleCounter = () => {
     setPoints(points + 1)
   }
 
+
   return (
     <>
       <div className='game'>
-
 
         <div className='header'>
           <div className='calendar'> 18.10.2023 </div>
@@ -41,7 +53,7 @@ export default function Lvl1() {
             <div className='person'></div>
           </div>
 
-          <div className='table'>
+          <form className='table'>
 
             <div className='docs'>
               <div className='ps'>
@@ -56,13 +68,15 @@ export default function Lvl1() {
             </div>
 
             <div className='buttons'>
-              <button className='btnY' onClick={() => { handleCounter(); approvedCall(); }}>Approve</button>
-              <button className='btnN'
-              // onClick={(isCheckedUniID || isCheckedPassport) ? deniedCall : "none selected"}
+              <button className='btnY' onClick={handleClick} type="button" >
+                Approve
+              </button>
+              <button className='btnN' type="button"
               >Deny
               </button>
+
             </div>
-          </div>
+          </form>
         </div>
       </div>
     </>
