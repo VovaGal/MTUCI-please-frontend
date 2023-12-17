@@ -131,3 +131,32 @@ input[name=ppInfo]:checked::before {
 .ppName {
     margin-top: 5px;
 }
+
+/* Absence checkbox */
+input[name=passportHere] {
+    appearance: none;
+    background-color: #746e6ea1;
+    margin: 0;
+    font: inherit;
+    margin-top: 15px;
+    margin-left: 35px;
+    height: 300px;
+    width: 240px;
+    color: #3f3f3f;
+    border: 0.15em solid currentColor;
+    border-radius: 0.15em;
+    transform: translateY(-0.075em);
+    display: grid;
+    place-content: center;
+}
+input[name=passportHere]::before {
+    content: "";
+    height: 300px;
+    width: 240px;
+    transform: scale(0);
+    transition: 120ms transform ease-in-out;
+    background-color: #f7080846;
+}
+input[name=passportHere]:checked::before {
+    transform: scale(1);
+}

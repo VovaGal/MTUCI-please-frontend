@@ -1,14 +1,19 @@
-import { useState, useContext } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import { DataContext } from "../../../funcs/DataContext.jsx";
+import Check from '../../../hooks/CheckboxProp.jsx';
 
 
 const Pass = () => {
-
 
   const { data } = useContext(DataContext);
 
   const [isCheckedPic, setIsCheckedPic] = useState(false);
   const [isCheckedInfo, setIsCheckedInfo] = useState(false);
+
+  useEffect(() => {
+    setIsCheckedPic(false);
+    setIsCheckedInfo(false);
+  }, [data]);
 
   return (
     <>
@@ -42,19 +47,6 @@ const Pass = () => {
       </div> */}
       </div>
     </>
-  )
-}
-
-const Check = (props) => {
-  return (
-    <label className='checks'>
-      <input type='checkbox'
-        id={props.id}
-        name={props.id}
-        value="issues"
-        checked={props.checked}
-        onChange={props.onChange} />
-    </label>
   )
 }
 

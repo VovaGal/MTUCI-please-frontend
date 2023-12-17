@@ -1,4 +1,4 @@
-import React from "react";
+import { useState, useEffect } from "react";
 import "../pages/Lvl1/items/Pass.css";
 import "../pages/Lvl1/items/Passport.css";
 import "../pages/Lvl1/items/UniID.css";
@@ -6,26 +6,49 @@ import "../pages/Lvl1/items/UniID.css";
 import Pass from "../pages/Lvl1/items/Pass.jsx";
 import Passport from "../pages/Lvl1/items/Passport.jsx";
 import UniID from "../pages/Lvl1/items/UniID.jsx";
-
-
+import Check from "../hooks/CheckboxProp.jsx";
 
 export function PassPresence(props) {
-    if(props.isPresent) {
+    useEffect(() => {
+        setIsCheckedPass(false);
+      }, [props]);
+
+    const [isCheckedPass, setIsCheckedPass] = useState(false);
+
+    if (props.isPresent) {
         return <Pass />
     }
-    return <input className='passHere' type='checkbox' />
+    return <Check id='passHere' checked={isCheckedPass} onChange={() => {
+        setIsCheckedPass(!isCheckedPass);
+    }} />
 }
 
 export function UniIDPresence(props) {
-    if(props.isPresent) {
+    useEffect(() => {
+        setIsCheckedUniID(false);
+      }, [props]);
+
+    const [isCheckedUniID, setIsCheckedUniID] = useState(false);
+
+    if (props.isPresent) {
         return <UniID />
     }
-    return <h1> null </ h1>
+    return <Check id='uniIDHere' checked={isCheckedUniID} onChange={() => {
+        setIsCheckedUniID(!isCheckedUniID);
+    }} />
 }
 
 export function PassportPresence(props) {
-    if(props.isPresent) {
+    useEffect(() => {
+        setIsCheckedPassport(false);
+      }, [props]);
+
+    const [isCheckedPassport, setIsCheckedPassport] = useState(false);
+
+    if (props.isPresent) {
         return <Passport />
     }
-    return <h1> null </ h1>
+    return <Check id='passportHere' checked={isCheckedPassport} onChange={() => {
+        setIsCheckedPassport(!isCheckedPassport);
+    }} />
 }

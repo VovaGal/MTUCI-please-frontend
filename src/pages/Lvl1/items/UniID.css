@@ -96,8 +96,8 @@ input[name=idPic] {
     background-color: #ffffff00;
     margin: 0;
     font: inherit;
-    height: 73px;
-    width: 58px;
+    height: 95px;
+    width: 84px;
     /* color: #000000;
     border: 0.15em solid currentColor;
     border-radius: 0.15em; */
@@ -107,8 +107,8 @@ input[name=idPic] {
 }
 input[name=idPic]::before {
     content: "";
-    height: 73px;
-    width: 58px;
+    height: 95px;
+    width: 84px;
     transform: scale(0);
     transition: 120ms transform ease-in-out;
     background-color: #f7080846;
@@ -158,4 +158,33 @@ input[name=idInfo]:checked::before {
 }
 .idName {
     margin-top: 5px;
+}
+
+/* Absence checkbox */
+input[name=uniIDHere] {
+    appearance: none;
+    background-color: #746e6ea1;
+    margin: 0;
+    font: inherit;
+    margin-top: 180px;
+    margin-left: -320px;
+    height: 128px;
+    width: 410px;
+    color: #3f3f3f;
+    border: 0.15em solid currentColor;
+    border-radius: 0.15em;
+    transform: translateY(-0.075em);
+    display: grid;
+    place-content: center;
+}
+input[name=uniIDHere]::before {
+    content: "";
+    height: 128px;
+    width: 410px;
+    transform: scale(0);
+    transition: 120ms transform ease-in-out;
+    background-color: #f7080846;
+}
+input[name=uniIDHere]:checked::before {
+    transform: scale(1);
 }

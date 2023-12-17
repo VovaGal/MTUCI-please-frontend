@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { lazy, Suspense, useState, useEffect } from "react";
 import { DataContext } from "./funcs/DataContext.jsx";
+import { PointContext } from "./funcs/PointContext.jsx";
 import { docInfo } from "./api/docsPull.jsx";
 
 const Home = lazy(() => import("./pages/Home/Home.jsx"));
@@ -24,14 +25,26 @@ function App() {
     }
   }, []);
 
+  const [points, setPoints] = useState(() => {
+    const localPoints = localStorage.getItem("POINTS");
+    if (localPoints == null) return (0)
+    return JSON.parse(localPoints)
+  });
+  useEffect(() => {
+    localStorage.setItem("POINTS", JSON.stringify(points))
+    console.log(points)
+  }, [points])
+
   return (
     <DataContext.Provider value={{ data, fetchData }}>
-      <Router>
-        <Routes>
-          <Route path="/" element={<Suspense fallback="Loading..."><Home /></Suspense>} />
-          <Route path="/lvl1" element={<Suspense fallback="Loading..."><Lvl1 /></Suspense>} />
-        </Routes>
-      </Router>
+      <PointContext.Provider value={{ points, setPoints }}>
+        <Router>
+          <Routes>
+            <Route path="/" element={<Suspense fallback="Loading..."><Home /></Suspense>} />
+            <Route path="/lvl1" element={<Suspense fallback="Loading..."><Lvl1 /></Suspense>} />
+          </Routes>
+        </Router>
+      </PointContext.Provider>
     </DataContext.Provider>
   );
 }

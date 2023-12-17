@@ -62,8 +62,8 @@ input[name=pInfo] {
     background-color: #ffffff00;
     margin: 0;
     font: inherit;
-    margin-top: 40px;
-    margin-left: -60px;
+    margin-top: 44px;
+    margin-left: -84px;
     height: 67px;
     width: 109px;
     /* color: #000000;
@@ -76,7 +76,7 @@ input[name=pInfo] {
 input[name=pInfo]::before {
     content: "";
     height: 67px;
-    width: 109px;
+    width: 86px;
     transform: scale(0);
     transition: 120ms transform ease-in-out;
     background-color: #f7080846;
@@ -90,4 +90,33 @@ input[name=pInfo]:checked::before {
 }
 .pName {
     margin-top: 5px;
+}
+
+/* Absence checkbox */
+input[name=passHere] {
+    appearance: none;
+    background-color: #746e6ea1;
+    margin: 0;
+    font: inherit;
+    margin-top: 20px;
+    margin-left: 140px;
+    height: 128px;
+    width: 205px;
+    color: #3f3f3f;
+    border: 0.15em solid currentColor;
+    border-radius: 0.15em;
+    transform: translateY(-0.075em);
+    display: grid;
+    place-content: center;
+}
+input[name=passHere]::before {
+    content: "";
+    height: 128px;
+    width: 205px;
+    transform: scale(0);
+    transition: 120ms transform ease-in-out;
+    background-color: #f7080846;
+}
+input[name=passHere]:checked::before {
+    transform: scale(1);
 }
