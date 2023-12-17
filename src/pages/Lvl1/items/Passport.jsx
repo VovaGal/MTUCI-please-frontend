@@ -1,24 +1,9 @@
-import React, { useState, useEffect } from 'react';
-import './Passport.css';
-import docInfo from '../../../api/docsPull';
+import { useState, useEffect, useContext } from 'react';
+import { DataContext } from "../../../funcs/DataContext.jsx";
 
 const Passport = () => {
 
-  // const [data, setData] = useState([]);
-
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     const result = await docInfo();
-  //     setData(result);
-  //   };
-  //   console.log("data is", data)
-  //   fetchData();
-  // }, []);
-
-  // useEffect(() => {
-  //   console.log("");
-  // });
-
+  const { data } = useContext(DataContext);
 
   const [isCheckedPic, setIsCheckedPic] = useState(false);
   const [isCheckedInfo, setIsCheckedInfo] = useState(false);
@@ -38,7 +23,7 @@ const Passport = () => {
 
         <div className='ppInfo'>
           <div>
-            {/* <div className='ppSurname'>
+            <div className='ppSurname'>
               {data.passport_surname}
             </div>
             <div className='ppName'>
@@ -46,7 +31,7 @@ const Passport = () => {
             </div>
             <div className='ppSecondN'>
               {data.passport_middle_name}
-            </div> */}
+            </div>
 
           </div>
           <Check id='ppInfo' checked={isCheckedInfo} onChange={handleOnChangeInfo => {
