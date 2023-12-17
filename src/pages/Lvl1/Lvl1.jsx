@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import React, { Component } from "react";
 // import { approvedCall, deniedCall } from "../../funcs/Refresh.jsx";
 import "./lvl1.css";
@@ -7,46 +7,29 @@ import "./items/Pass.css";
 import "./items/Passport.css";
 import "./items/UniID.css";
 
-import {Pass} from "./items/Pass.jsx";
+import Pass from "./items/Pass.jsx";
 import Passport from "./items/Passport.jsx";
 import UniID from "./items/UniID.jsx";
 import { useWindowSize } from "../../hooks/Resizer.jsx";
-import { docInfo } from "../../api/docsPull.jsx";
 // import { saveDocs } from "../../api/docsPull.jsx";
-import { dataContext } from "../../funcs/dataContext.jsx";
+
+import { DataContext } from "../../funcs/DataContext.jsx";
+import { docInfo } from "../../api/docsPull.jsx";
 
 export default function Lvl1() {
-
-  const [data, setData] = useState(null);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      const result = await docInfo();
-      setData(result);
-    };
-    console.log("data is")
-    console.log(data)
-    fetchData();
-  }, []);
+  const { data, fetchData } = useContext(DataContext);
 
   useEffect(() => {
     console.log("render");
   });
 
   const handleClick = () => {
-    // saveDocs();
-    const fetchData = async () => {
-      const result = await docInfo();
-      setData(result);
-    };
-    console.log("data is")
-    console.log(data)
     fetchData();
   };
 
-  const [width, height] = useWindowSize();
-  console.log("width", width);
-  console.log("height", height);
+  // const [width, height] = useWindowSize();
+  // console.log("width", width);
+  // console.log("height", height);
 
   const [points, setPoints] = useState(0);
   const handleCounter = () => {
@@ -54,7 +37,7 @@ export default function Lvl1() {
   };
 
   return (
-    <dataContext.Provider value={{ data }}>
+    <>
       <div className="game">
         <div className="header">
           <h1>{data.surname}</h1>
@@ -91,6 +74,6 @@ export default function Lvl1() {
           </form>
         </div>
       </div>
-    </dataContext.Provider>
+    </>
   );
 }
