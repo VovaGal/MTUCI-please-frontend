@@ -19,7 +19,7 @@ const UniID = () => {
     <div className='uniID'>
 
       <div className='secPage'>
-        <div className='idPic'>
+        <div className='idPic' style={{ backgroundImage: `url('${data.student_id_photo}')`, backgroundSize: "cover" }}>
           <Check id='idPic' checked={isCheckedPic} onChange={handleOnChangePic => {
             setIsCheckedPic(!isCheckedPic);
           }} />

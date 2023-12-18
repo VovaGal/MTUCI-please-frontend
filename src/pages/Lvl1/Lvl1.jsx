@@ -28,13 +28,13 @@ export default function Lvl1() {
     <>
       <div className="game">
         <div className="header">
-          <div className="calendar"> 18.10.2023 </div>
-          <p>{points}</p>
+          {/* <div className="calendar"> 18.10.2023 </div> */}
+          {/* <h1>{points}</h1> */}
         </div>
 
         <div className="gameArea">
           <div className="window">
-            <div className="person"></div>
+            <div className="person" style={{ backgroundImage: `url('${data.photo}')`, backgroundSize: "cover" }}></div>
           </div>
 
           <form className="table">

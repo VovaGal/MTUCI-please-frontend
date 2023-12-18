@@ -18,7 +18,7 @@ const Passport = () => {
     <div className='passport'>
 
       <div className='secPage'>
-        <div className='ppPic'>
+        <div className='ppPic' style={{ backgroundImage: `url('${data.passport_photo}')`, backgroundSize: "cover" }}>
           <Check id='ppPic' checked={isCheckedPic} onChange={handleOnChangePic => {
             setIsCheckedPic(!isCheckedPic);
           }} />

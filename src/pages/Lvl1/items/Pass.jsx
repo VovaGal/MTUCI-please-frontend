@@ -1,6 +1,7 @@
 import { useState, useEffect, useContext } from 'react';
 import { DataContext } from "../../../funcs/DataContext.jsx";
 import Check from '../../../hooks/CheckboxProp.jsx';
+import bellyW from "../../../assets/bellyW.svg";
 
 
 const Pass = () => {
@@ -19,13 +20,14 @@ const Pass = () => {
     <>
       <div className='pass' >
 
-        <div className='pPic'>
+        <div className='pPic' style={{ backgroundImage: `url('${data.pass_photo}')`, backgroundSize: "cover" }} >
           <Check id='pPic' checked={isCheckedPic} onChange={() => {
             setIsCheckedPic(!isCheckedPic);
           }} />
           {/* <div className="resultPass">
           checkbox is {isCheckedPic ? "checked" : "un-checked"}.
         </div> */}
+
         </div>
 
         <div className='pInfo'>

@@ -80,10 +80,10 @@ input[name=idDate]:checked::before {
 
 /*Pic */
 .idPic {
-    background-image:   
+    /* background-image:   
     url(
         ../../../assets/bellyW.svg);
-    background-size: cover;
+    background-size: cover; */
     /* margin-left: 22px; */
     margin-top: 17px;
     margin-left: 10px;

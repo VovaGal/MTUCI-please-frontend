@@ -13,6 +13,9 @@ import { loggingOut } from "../../api/logout.jsx";
 import { UserContext } from "../../funcs/userContext.jsx";
 import { DataContext } from "../../funcs/DataContext.jsx";
 import { PointContext } from "../../funcs/PointContext.jsx";
+import "../Lvl1/lvl1.css";
+
+
 
 function Home() {
   const { fetchData } = useContext(DataContext);

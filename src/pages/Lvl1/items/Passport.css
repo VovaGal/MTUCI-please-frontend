@@ -52,10 +52,10 @@ input[name=ppDate]:checked::before {
 
 /*Pic */
 .ppPic {
-    background-image:   
+    /* background-image:   
     url(
         ../../../assets/bellyW.svg);
-    background-size: cover;
+    background-size: cover; */
     /* margin-left: 22px; */
     margin-top: 175px;
     margin-left: 15px;
