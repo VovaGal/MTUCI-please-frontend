@@ -12,9 +12,14 @@ import { checkAuth } from "../../api/user.jsx";
 import { loggingOut } from "../../api/logout.jsx";
 import { UserContext } from "../../funcs/userContext.jsx";
 import { DataContext } from "../../funcs/DataContext.jsx";
+import { PointContext } from "../../funcs/PointContext.jsx";
+import "../Lvl1/lvl1.css";
+
+
 
 function Home() {
   const { fetchData } = useContext(DataContext);
+  const { points, setPoints } = useContext(PointContext);
 
   const navigate = useNavigate();
   const [user, setUser] = useState(null);
@@ -47,7 +52,7 @@ function Home() {
             <h2> Hello, {user.user.username}! </h2>
             <h2>
               {" "}
-              You have {user.user.first_level_score} points in first lvl{" "}
+              You have {points} points in first lvl{" "} 
             </h2>
             <button onClick={handleLogout}>Logout</button>
           </div>
@@ -66,10 +71,10 @@ function Home() {
           </div>
         )}
 
-        <h1>Welcom to MTUCI PLEASE</h1>
+        <h1>Welcome to MTUCI PLEASE</h1>
         <button
           onClick={() =>
-            user ? (fetchData(), navigate("/lvl1")) : setIsModalOpen(true)
+            user ? (fetchData(), navigate("/lvl1"), setPoints(0)) : setIsModalOpen(true)
           }
         >
           Level 1

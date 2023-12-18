@@ -1,5 +1,6 @@
-import { useState, useContext } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import { DataContext } from "../../../funcs/DataContext.jsx";
+import Check from '../../../hooks/CheckboxProp.jsx';
 
 const Passport = () => {
 
@@ -8,11 +9,16 @@ const Passport = () => {
   const [isCheckedPic, setIsCheckedPic] = useState(false);
   const [isCheckedInfo, setIsCheckedInfo] = useState(false);
 
+  useEffect(() => {
+    setIsCheckedPic(false);
+    setIsCheckedInfo(false);
+  }, [data]);
+
   return (
     <div className='passport'>
 
       <div className='secPage'>
-        <div className='ppPic'>
+        <div className='ppPic' style={{ backgroundImage: `url('${data.passport_photo}')`, backgroundSize: "cover" }}>
           <Check id='ppPic' checked={isCheckedPic} onChange={handleOnChangePic => {
             setIsCheckedPic(!isCheckedPic);
           }} />
@@ -43,19 +49,6 @@ const Passport = () => {
         </div>
       </div>
     </div>
-  )
-}
-
-const Check = (props) => {
-  return (
-    <label className='passportCheck'>
-      <input type='checkbox'
-        id={props.id}
-        name={props.id}
-        value="issues"
-        checked={props.checked}
-        onChange={props.onChange} />
-    </label>
   )
 }
 

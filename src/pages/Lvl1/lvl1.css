@@ -33,10 +33,10 @@
   }
 
 .person {
-background-image:   
+/* background-image:   
 url(
         ../../assets/bellyW.svg);
-    background-size: fill;
+    background-size: fill; */
     height: 432px;
     width: 512px;
     margin: 0 0;
