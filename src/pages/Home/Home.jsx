@@ -35,7 +35,6 @@ function Home() {
 
   const handleLogout = async () => {
     const success = await loggingOut();
-    setUser(null);
     if (success) {
       alert("Successfully logged out");
       setUser(null);
@@ -52,7 +51,7 @@ function Home() {
             <h2> Hello, {user.user.username}! </h2>
             <h2>
               {" "}
-              You have {points} points in first lvl{" "} 
+              You have {points} points in first lvl{" "}
             </h2>
             <button onClick={handleLogout}>Logout</button>
           </div>

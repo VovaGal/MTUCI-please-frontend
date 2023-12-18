@@ -1,5 +1,5 @@
 import axios from "./axiosConfig";
-import { useState, useEffect } from 'react';
+
 
 export const docInfo = async () => {
   let result = [];
